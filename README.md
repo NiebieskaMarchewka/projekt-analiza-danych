@@ -1,1 +1,1 @@
-# projekt-analiza-danych
+Projekt z przedmiotu "Projekt z zakresu analizy danych" na Politechnice Lubelskiej. Repozytorium nie zawiera pliku ze zbiorem danych. Można go pobrać ze strony https://www.kaggle.com/datasets/aasheesh200/framingham-heart-study-dataset.

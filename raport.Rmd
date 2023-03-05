@@ -743,59 +743,6 @@ Należy zaznaczyć, że wyniki nie powinny być uogólniane na populację polsk�
 
 Po przeanalizowaniu i wizualizacji powyższych danych można dojść do wniosku, że ocena istotności statystycznej jest przede wszystkim działaniem pomocniczym, a nie decyzyjnym. Wiele zależy również od sposobu przedstawienia danych -- wpływ badanych czynników był lepiej widoczny dla danych pogrupowanych przedstawionych w formie wykresów słupkowych niż dla danych niezagregowanych w formie wykresów ramka-wąsy.
 
-```{r}
-# df |> 
-#   group_by(TenYearCHD) |> 
-#   summarise(min = min(totChol),
-#             q1 = quantile(totChol, 0.25),
-#             median = median(totChol),
-#             mean = mean(totChol),
-#             q3 = quantile(totChol, 0.75),
-#             max = max(totChol)
-#             ) |> 
-#   flextable()
-```
-
-```{r}
-#c(age, BMI, sysBP, diaBP, BMI )
-
-# df |> 
-#   select(-c(BMIcategory, ageCategory, BPcategory)) -> df_m
-# glm.fit = glm(TenYearCHD ~ ., data = df_m, family = binomial)
-# summary(glm.fit)
-# step(glm.fit)
-```
-
-```{r}
-# glm.fit2 <- glm(TenYearCHD ~ male + age + cigsPerDay + prevalentStroke  + sysBP + glucose, data = df_m, family = binomial)
-# summary(glm.fit2)
-```
-
-```{r}
-# glm_0 <- glm(TenYearCHD ~ -1, data = df_m, family = binomial)
-# glm_Best <- step(glm.fit,scope=c(glm_0,glm.fit),
-# direction = 'backward',test='F',trace=0)
-# summary(glm_Best)
-```
-
-```{r}
-#glm.probs = predict(glm.fit, type = "response")
-#glm.pred=rep(0, nrow(framingham))
-#glm.pred[glm.probs>0.5] = 1
-#table(glm.pred, TenYearCHD)
-```
-
-```{r}
-# glm.probs2 = predict(glm.fit2, type = "response")
-# glm.pred2=rep(0, nrow(df))
-# glm.pred2[glm.probs2>0.2] = 1
-# table(glm.pred2, df$TenYearCHD)
-```
-
-```{r}
-#caret::confusionMatrix(as.factor(glm.pred2), as.factor(df$TenYearCHD))
-```
-
 # Bibliografia
 
 1.   <https://www.kaggle.com/datasets/aasheesh200/framingham-heart-study-dataset>
